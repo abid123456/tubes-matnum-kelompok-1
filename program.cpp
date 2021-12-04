@@ -34,6 +34,8 @@ int read(){
 double f(double x){
     int i,j;
     lct=0;
+    // menghitung titik bawah dan atas tali busur setiap lingkaran di
+    // garis x=x
     for(i=1;i<=cnt;i++){
         if(fabs(c[i].x-x)>=c[i].r)continue;
         double h= sqrt(c[i].r*c[i].r-(c[i].x-x)*(c[i].x-x));
@@ -44,6 +46,7 @@ double f(double x){
     if(!lct)return 0;
     double len=0,last=-INF;
     sort(a+1,a+lct+1);
+    // menghitung union dari tali busur lingkaran di garis x=x
     for(i=1;i<=lct;i++){
         if(a[i].l>last){
             len+=a[i].r-a[i].l;
